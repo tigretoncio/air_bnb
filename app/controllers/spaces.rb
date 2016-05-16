@@ -5,7 +5,7 @@ class AirBnb < Sinatra::Base
   end
 
   get "/spaces" do
-    @spaces = Space.all(order: [:price.desc])
+    @spaces = Space.all(order: [:price.asc])
     erb :"spaces/index"
   end
 
