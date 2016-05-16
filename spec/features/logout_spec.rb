@@ -3,6 +3,6 @@ feature "logging out" do
     sign_up
     logout
     expect(page).not_to have_content "Hello Amy!"
-    expect(current_path).to eq "/peeps"
+    expect(current_path).to eq "/spaces"
   end
 end

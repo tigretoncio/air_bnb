@@ -7,7 +7,7 @@ feature "password recovery" do
 
   scenario "user can choose to reset password when trying to login" do
     logout
-    visit "/peeps"
+    visit "/spaces"
     click_link "Login"
     expect(page).to have_content "I've forgotten my password"
   end
