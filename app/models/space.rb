@@ -4,7 +4,7 @@ class Space
   property :id, Serial
   property :name, Text, required: true
   property :description, Text, required: true
-  property :price, Integer, required: true
+  property :price, Text, required: true
 
   belongs_to :user, required: true
 
