@@ -1,11 +1,14 @@
-<!-- <%if current_user %>
+<%if current_user %>
   <p>Add a new space</p>
+  <h1>Little test</h1>
   <div class="tiny_space"></div>
   <form action="/spaces" method="post">
-    <textarea placeholder ="Write your space..." name="message"></textarea>
+    <input type="text" name="name"/>
+    <textarea placeholder ="Write about your space..." name="description"></textarea>
+    <input type="text" name="price"/>
     <div class="tiny_space"></div>
-    <input class="button" type="submit" value="Share"/>
+    <input class="button" type="submit" value="Add space"/>
   </form>
 <%else%>
-  <p>Please login to space</p>
-<%end%> -->
+  <p>Please login to create a space</p>
+<%end%>

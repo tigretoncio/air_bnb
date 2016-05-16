@@ -14,10 +14,14 @@ module SessionHelpers
     click_button "Sign up"
   end
 
-  def create_space(message = "My first space")
+  def create_space(params = {name: "Amy's house",
+                        description: "Amy's house is nice",
+                        price: "£30"})
     visit "/spaces/new"
-    fill_in :message, with: message
-    click_button "Share"
+    fill_in :name, with: params[:name]
+    fill_in :description, with: params[:description]
+    fill_in :price, with: params[:price]
+    click_button "Add space"
   end
 
   def login(params = { email: "amy@gmail.com",
