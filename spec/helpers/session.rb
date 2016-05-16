@@ -14,8 +14,8 @@ module SessionHelpers
     click_button "Sign up"
   end
 
-  def create_peep(message = "My first peep")
-    visit "/peeps/new"
+  def create_space(message = "My first space")
+    visit "/spaces/new"
     fill_in :message, with: message
     click_button "Share"
   end
