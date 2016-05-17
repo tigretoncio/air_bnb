@@ -1,15 +1,22 @@
 <h1>Spaces</h1>
+<form method='get' action='/spaces'>
+  Available from: <input type="date" name="available_from" required/>
+  Available to: <input type="date" name="available_to" required/>
+  <input type='submit' value='List Spaces' class="button">
+</form>
 <div class="tiny_space"></div>
 <a class="link" href="/spaces/new">Add a new space</a>
 <div class="tiny_space"></div>
 <div align="center">
   <% @spaces.each do |space| %>
-    <div class="space" style="width:75%">
+    <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
+      <div class="space" style="width:75%">
       <p><%=space.name%></p>
       <p><%=space.description%></p>
       <p><%=space.price%></p>
       <p class="username">by <strong><%=space.user.name%></strong> (@<%=space.user.username%>)</p>
       <div class="tiny_space"></div>
+    </a>
     </div>
   <%end%>
   </div>
