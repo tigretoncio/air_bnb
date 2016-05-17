@@ -25,4 +25,22 @@ feature "view spaces" do
     second_space_index = page.body.index("Amy's other house")
     expect(first_space_index).to be > second_space_index
   end
+
+  scenario "filtering spaces" do
+    params1= {name:"Maria's other house", description:"Maria's other house is also nice", price:"£20", available_from: Time.new(2016,6,25), available_to: Time.new(2016,6,30)}
+    create_space(params1)
+    fill_in :available_from, with: Time.new(2016,6,26)
+    fill_in :available_to, with: Time.new(2016,6,29)
+    click_button 'List Spaces'
+    expect(page).to have_content "Maria's other house"
+    expect(page).not_to have_content "Amy's house"
+  end
+
+  scenario "viewing each space in more detail" do
+    click_link "space#{Space.first.id}"
+    expect(page).to have_content "Amy's house"
+    expect(page).to have_content "Detail view"
+    expect(page).to have_css("form input#request")
+    expect(page).to have_css("form input#date")
+  end
 end

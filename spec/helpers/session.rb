@@ -29,6 +29,21 @@ module SessionHelpers
     click_button "Add space"
   end
 
+  def create_booking(date = Time.now)
+    sign_up
+    create_space
+    logout
+    params = {name: "Maria",
+              username: "maria",
+              email: "maria@gmail.com",
+              password: "marias_password",
+              password_confirmation: "marias_password"}
+    sign_up(params)
+    visit "/spaces"
+    click_link "space#{Space.first.id}"
+    fill_in :date, with: date
+  end
+
   def login(params = { email: "amy@gmail.com",
                        password: "my_password"})
     visit "/sessions/new"
