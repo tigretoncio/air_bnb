@@ -5,7 +5,11 @@ class AirBnb < Sinatra::Base
   end
 
   get "/spaces" do
-    @spaces = Space.all(order: [:price.asc])
+    if params[:available_from]
+      @spaces = Space.all(:available_from.lte => params[:available_from], :available_to.gte => params[:available_to])
+    else
+      @spaces = Space.all(order: [:price.asc])
+    end
     erb :"spaces/index"
   end
 
@@ -25,6 +29,15 @@ class AirBnb < Sinatra::Base
       redirect to "/spaces/new"
     else
       redirect to "/spaces"
+    end
+  end
+
+  get "/spaces/:id" do
+    if current_user
+      @space = Space.first(id: params[:id])
+      erb :"spaces/space"
+    else 
+      redirect to "/sessions/new"
     end
   end
 end
