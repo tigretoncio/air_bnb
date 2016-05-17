@@ -6,8 +6,9 @@ class AirBnb < Sinatra::Base
   set :session_secret, "super secret"
   set :partial_template_engine, :erb
 
-  set :static, true
-#  set :public, "public"
+  # set :static, true
+  # set :public_folder, File.dirname(__FILE__) + '/public'
+  set :public, "public"
 
   enable :partial_underscores
 
