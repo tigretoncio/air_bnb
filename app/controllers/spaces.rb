@@ -17,7 +17,9 @@ class AirBnb < Sinatra::Base
     space = Space.create(user: current_user,
                          name: params[:name],
                          description: params[:description],
-                         price: params[:price])
+                         price: params[:price],
+                         available_from: params[:available_from],
+                         available_to: params[:available_to])
     if space.id.nil?
       flash[:errors] = space.errors.full_messages
       redirect to "/spaces/new"

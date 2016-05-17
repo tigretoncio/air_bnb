@@ -16,11 +16,16 @@ module SessionHelpers
 
   def create_space(params = {name: "Amy's house",
                         description: "Amy's house is nice",
-                        price: "£30"})
+                        price: "£30",
+                        available_from: Time.new(2016,5,25),
+                        available_to: Time.new(2016,5,30)}
+                        )
     visit "/spaces/new"
     fill_in :name, with: params[:name]
     fill_in :description, with: params[:description]
     fill_in :price, with: params[:price]
+    fill_in :available_from, with: params[:available_from]
+    fill_in :available_to, with: params[:available_to]
     click_button "Add space"
   end
 

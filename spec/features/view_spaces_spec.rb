@@ -11,7 +11,7 @@ feature "view spaces" do
   end
 
   scenario "view list of spaces" do
-    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:"£40"}
+    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:"£40", available_from: Time.new(2016,5,25), available_to: Time.new(2016,5,30)}
     create_space(params1)
     visit "/spaces"
     expect(page).to have_content "Amy's house"
@@ -19,7 +19,7 @@ feature "view spaces" do
   end
 
   scenario "view list of spaces in ascending price order" do
-    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:"£20"}
+    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:"£20", available_from: Time.new(2016,5,25), available_to: Time.new(2016,5,30)}
     create_space(params1)
     first_space_index = page.body.index("Amy's house")
     second_space_index = page.body.index("Amy's other house")
