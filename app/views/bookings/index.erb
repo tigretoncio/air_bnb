@@ -1,0 +1,17 @@
+<h1>My Bookings</h1>
+
+<div class="tiny_space"></div>
+<div align="center">
+  <% @bookings.each do |booking| %>
+    <a id="booking<%=booking.id%>" href="/bookings/<%=booking.id%>">
+      <div class="space" style="width:75%">
+      <p><%=booking.id%></p>
+      <p><%=booking.date%></p>
+      <p><%=booking.status%></p>
+      <p class="username">by <strong><%=booking.user.name%></strong> (@<%=booking.user.username%>)</p>
+      <div class="tiny_space"></div>
+    </a>
+    </div>
+  <%end%>
+  </div>
+</div>
