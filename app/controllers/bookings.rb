@@ -1,7 +1,15 @@
 class AirBnb < Sinatra::Base
 
   get "/bookings" do
-    @bookings = Booking.all
+    @bookings = Booking.all(user_id: current_user.id)
+
+
+    spaces_I_own = Space.all(user_id: current_user.id)
+    arr = []
+    spaces_I_own.each do |space|
+      arr << space.id
+    end
+    @bookings_received = Booking.all(space_id: arr)
     erb :"bookings/index"
   end
 

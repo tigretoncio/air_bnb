@@ -29,7 +29,7 @@ module SessionHelpers
     click_button "Add space"
   end
 
-  def create_booking(date = Time.now)
+  def create_booking(date = Time.new(2016,5,30))
     sign_up
     create_space
     logout
