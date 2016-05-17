@@ -2,14 +2,14 @@
   <p>Add a new space</p>
   <div class="tiny_space"></div>
   <form action="/spaces" method="post">
-    <input placeholder="Name of space" type="text" name="name"/>
+    <input placeholder="Name of space" type="text" name="name" required/>
     <br>
-    <textarea placeholder ="Write about your space..." name="description"></textarea>
+    <textarea placeholder ="Write about your space..." name="description" required></textarea>
         <br>
-    <input placeholder="Price per night" type="text" name="price"/>
+    <input placeholder="Price per night" type="text" name="price" required/>
         <br>
-    Available from: <input type="date" name="available_from"/> <br>
-    Available to: <input type="date" name="available_to"/>
+    Available from: <input type="date" name="available_from" required/> <br>
+    Available to: <input type="date" name="available_to" required/>
     <div class="tiny_space"></div>
     <input class="button" type="submit" value="Add space"/>
   </form>
