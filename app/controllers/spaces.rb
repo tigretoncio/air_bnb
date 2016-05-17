@@ -31,4 +31,9 @@ class AirBnb < Sinatra::Base
       redirect to "/spaces"
     end
   end
+
+  get "/spaces/:id" do
+    @space = Space.first(id: params[:id])
+    erb :"spaces/space"
+  end
 end

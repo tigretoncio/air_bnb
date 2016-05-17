@@ -18,6 +18,8 @@ class User
   property :password_token, Text
   property :password_token_time, Time
 
+  
+
   validates_confirmation_of :password
 
   def password=(password)

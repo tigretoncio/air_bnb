@@ -35,4 +35,12 @@ feature "view spaces" do
     expect(page).to have_content "Maria's other house"
     expect(page).not_to have_content "Amy's house"
   end
+
+  scenario "viewing each space in more detail" do
+    click_link "space#{Space.first.id}"
+    expect(page).to have_content "Amy's house"
+    expect(page).to have_content "Detail view"
+    expect(page).to have_css("form input#request")
+    expect(page).to have_css("form input#date")
+  end
 end
