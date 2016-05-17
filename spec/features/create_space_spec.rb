@@ -24,4 +24,10 @@ feature "create a new space" do
     expect { create_space(params2) }.to change(Space, :count).by(0)
     expect { create_space(params3) }.to change(Space, :count).by(0)
   end
+
+  scenario "link spaces takes you to spaces page" do
+    sign_up
+    click_link "Spaces"
+    expect(page).to have_content "Add a new space"
+  end
 end
