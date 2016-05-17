@@ -2,5 +2,6 @@ Detail view
 <%=@space.name%>
 <form action="/bookings/new" method="post">
   <input id="date" type="date" name="date" required/>
+  <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
   <input id="request" class="button" type="submit" value="Request to book"/>
 </form>
