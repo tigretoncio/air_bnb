@@ -3,6 +3,7 @@ class Booking
 
   property :id, Serial
   property :date, Date, required: true
+  property :status, Text, required: true 
   #property:check_in, check_out is next functionality to implement
 
   belongs_to :user, required: true
