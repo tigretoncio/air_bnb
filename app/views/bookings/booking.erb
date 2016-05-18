@@ -10,5 +10,7 @@ Detail view
 <br>
 <p>Other requests for this space</p>
   <% @other_bookings.each do |other_booking| %>
-    <p><%=other_booking.user.name%>
+    <a href="/bookings/<%=other_booking.id%>">
+      <p><%=other_booking.user.name%>
+    </a>
   <%end%>

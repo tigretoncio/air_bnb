@@ -11,9 +11,8 @@ Detail view
       }
     }, false);
 
-    <%disable_dates = ["2016-05-19", "2016-05-21"]%>; // for testing
-    var array = <%=disable_dates%>;  // for testing
-    console.log(array);  // for testing
+    var array = <%=@bookings_dates%>;  
+    console.log(array);
 
     $("#date").datepicker({
       beforeShowDay: function(date) {
