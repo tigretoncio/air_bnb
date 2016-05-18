@@ -52,4 +52,25 @@ feature "confirm bookings I've received" do
     expect{click_button "Confirm"}.to change{Booking.first.status}
     expect(page).to have_content "confirmed"
   end
+
+  scenario "change status of other bookings once one is confirmed" do
+    pre_create_booking
+    create_booking
+    logout
+    params = {name: "Sergio",
+              username: "sergio",
+              email: "sergio@gmail.com",
+              password: "my_password",
+              password_confirmation: "my_password"}
+    sign_up(params)
+    create_booking
+    logout
+    login
+    visit "/bookings"
+    click_link "booking#{booking.id}"
+    click_button "Confirm"
+    expect(page).to have_content "denied"
+  end
+
+
 end
