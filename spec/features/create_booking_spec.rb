@@ -1,7 +1,7 @@
 feature "create a new booking" do
   scenario "add a new booking to list of bookings" do
-    create_booking
-    expect{click_button "Request to book"}.to change(Booking, :count).by(1)
+    pre_create_booking
+    expect{create_booking}.to change(Booking, :count).by(1)
   end
 
   scenario "cannot create a booking if not logged in" do
@@ -14,13 +14,8 @@ feature "create a new booking" do
   end
 
   scenario "cannot create booking if no date" do
-    create_booking(nil)
-    expect{click_button "Request to book"}.to change(Booking, :count).by(0)
+    pre_create_booking
+    expect{create_booking(nil)}.to change(Booking, :count).by(0)
   end
 
-  # scenario "create booking takes you to bookings page" do
-  #   sign_up
-  #   click_link "Spaces"
-  #   expect(page).to have_content "Add a new space"
-  # end
 end
