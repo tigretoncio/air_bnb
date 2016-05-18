@@ -1,0 +1,14 @@
+Detail view
+<%=@booking.user.name%>
+<%=@booking.space.name%>
+<form action="/bookings/<%=@booking.id%>/confirmed" method="post">
+  <input id="confirm" class="button" type="submit" value="Confirm"/>
+</form>
+<form action="/bookings/<%=@booking.id%>/denied" method="post">
+  <input class="button" type="submit" value="Deny"/>
+</form>
+<br>
+<p>Other requests for this space</p>
+  <% @other_bookings.each do |other_booking| %>
+    <p><%=other_booking.user.name%>
+  <%end%>
