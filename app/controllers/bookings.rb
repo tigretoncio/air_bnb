@@ -34,9 +34,11 @@ class AirBnb < Sinatra::Base
   post "/bookings/:id/:status" do
     booking = Booking.first(id: params[:id])
     booking.update(status: params[:status])
-    other_bookings = Booking.all(space_id: booking.space.id,
-                                  date: booking.date) - booking
-    other_bookings.update(status: "denied")
+    if  params[:status] == "confirmed"
+      other_bookings = Booking.all(space_id: booking.space.id,
+                                    date: booking.date) - booking
+      other_bookings.update(status: "denied")
+    end
     redirect to "/bookings"
   end
 end
