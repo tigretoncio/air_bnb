@@ -36,7 +36,7 @@ class AirBnb < Sinatra::Base
     if current_user
       @space = Space.first(id: params[:id])
       erb :"spaces/space"
-    else 
+    else
       redirect to "/sessions/new"
     end
   end
