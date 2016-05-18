@@ -1,5 +1,7 @@
 Detail view
+<br>
 <%=@booking.user.name%>
+<br>
 <%=@booking.space.name%>
 <form action="/bookings/<%=@booking.id%>/confirmed" method="post">
   <input id="confirm" class="button" type="submit" value="Confirm"/>
@@ -10,5 +12,7 @@ Detail view
 <br>
 <p>Other requests for this space</p>
   <% @other_bookings.each do |other_booking| %>
-    <p><%=other_booking.user.name%>
+    <a href="/bookings/<%=other_booking.id%>">
+      <p><%=other_booking.user.name%>
+    </a>
   <%end%>
