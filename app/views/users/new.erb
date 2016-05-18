@@ -1,14 +1,26 @@
-<p>Please enter your details to sign up</p>
-<form action="/users" method="post">
-  <input placeholder ="Name" type="text" name="name" required/>
-  <div class="tiny_space"></div>
-  <input placeholder ="Username" type="text" name="username" required/>
-  <div class="tiny_space"></div>
+
+<div class="testbox">
+  <h1>Registration</h1>
+
+  <form action="/users" method="post">
+  <hr>
+  <hr>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="name" placeholder="Name" required/>
+
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="username" placeholder="Username" required/>
+
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
   <input placeholder ="Email" type="email" name="email" required/>
-  <div class="tiny_space"></div>
-  <input placeholder ="Password" type="password" name="password" required/>
-  <div class="tiny_space"></div>
-  <input placeholder ="Confirm password" type="password" name="password_confirmation" required/>
-  <div class="mini_space"></div>
+
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input type="password" name="password" placeholder="Password" required/>
+
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input type="password" name="password_confirmation" placeholder="Confirm Password" required/>
+
   <input class="button" type="submit" value="Sign up"/>
-</form>
+
+  </form>
+</div>
