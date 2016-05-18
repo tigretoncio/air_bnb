@@ -498,8 +498,6 @@ a.button:hover {
 
 
 
-
-
 .unstyled::-webkit-inner-spin-button,
 .unstyled::-webkit-calendar-picker-indicator {
     display: none;
@@ -526,6 +524,15 @@ table{
 th, td {
     padding: 5px;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -558,89 +565,3 @@ input#go_button:hover, input#gobutton:focus{
   -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
   box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

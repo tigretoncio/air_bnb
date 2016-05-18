@@ -35,6 +35,8 @@ class AirBnb < Sinatra::Base
   get "/spaces/:id" do
     if current_user
       @space = Space.first(id: params[:id])
+      bookings = Booking.all(space_id: @space.id, status: "confirmed")
+      @bookings_dates = bookings.map {|booking| booking.date.strftime("%Y-%m-%d")}
       erb :"spaces/space"
     else
       redirect to "/sessions/new"
