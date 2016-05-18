@@ -6,6 +6,11 @@ feature "view booking" do
     expect(page).to have_content "My Bookings"
   end
 
+  scenario "don't view list of bookings if not logged in" do
+    visit "/bookings"
+    expect(current_path).to eq "/sessions/new"
+  end
+
   scenario "redirect to list of bookings when create a booking" do
     pre_create_booking
     create_booking
@@ -37,6 +42,18 @@ feature "view booking" do
     expect(page).to have_content "Sergio"
     expect(page).to have_content "Amy's house"
     expect(page).to have_content "2016-05-30"
+  end
+
+  scenario "viewing each booking I've received in more detail" do
+    pre_create_booking
+    create_booking
+    logout
+    login
+    visit "/bookings"
+    click_link "booking#{Booking.first.id}"
+    expect(page).to have_content "Maria"
+    expect(page).to have_content "Amy's house"
+    expect(page).to have_css("form input#confirm")
   end
 
 end
