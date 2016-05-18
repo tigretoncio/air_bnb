@@ -7,7 +7,7 @@ class AirBnb < Sinatra::Base
   set :partial_template_engine, :erb
 
   set :static, true
-#  set :public, "public"
+  set :public_folder, "public"
 
   enable :partial_underscores
 
