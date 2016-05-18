@@ -4,7 +4,7 @@
 <div align="left"> Bookings I've made
   <% @bookings_made.each do |booking| %>
     <a href="/spaces/<%=booking.space.id%>">
-      <div class="space" style="width:75%">
+      <div style="width:75%">
         <p><%=booking.id%></p>
         <p><%=booking.date%></p>
         <p><%=booking.status%></p>
@@ -20,7 +20,7 @@
 <div align="right"> Bookings I've receieved
   <% @bookings_received.each do |booking| %>
     <a id="booking<%=booking.id%>" href="/bookings/<%=booking.id%>">
-      <div class="space" style="width:75%">
+      <div style="width:75%">
         <p><%=booking.id%></p>
         <p><%=booking.date%></p>
         <p><%=booking.status%></p>
