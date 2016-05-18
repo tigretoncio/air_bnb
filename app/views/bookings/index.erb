@@ -3,7 +3,7 @@
 <div class="tiny_space"></div>
 <div align="left"> Bookings I've made
   <% @bookings_made.each do |booking| %>
-    <a id="booking<%=booking.id%>" href="/spaces/<%=booking.space.id%>">
+    <a href="/spaces/<%=booking.space.id%>">
       <div style="width:75%">
         <p><%=booking.id%></p>
         <p><%=booking.date%></p>
