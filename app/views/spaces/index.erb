@@ -9,15 +9,29 @@
 <div class="tiny_space"></div>
 <div align="center">
   <% @spaces.each do |space| %>
-    <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
-      <div style="width:75%">
-      <p><%=space.name%></p>
-      <p><%=space.description%></p>
-      <p><%=space.price%></p>
+  <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
+    <div style="width:75%">
+      <table style="width:100%">
+        <tr>
+          <td class="ellipsis">Name</td>
+          <td class="ellipsis"><%=space.name%></td>
+          <td></td>   
+        </tr>
+        <tr>
+          <td class="ellipsis">Description</td>
+          <td><div id="div2"><%=space.description%></div></td>
+          <td>Book</td>   
+        </tr>
+        <tr>
+          <td class="ellipsis">Price</td>
+          <td class="ellipsis"><%=space.price%></td> 
+          <td></td> 
+        </tr>
+      </table>
       <p class="username">by <strong><%=space.user.name%></strong> (@<%=space.user.username%>)</p>
       <div class="tiny_space"></div>
     </a>
-    </div>
-  <%end%>
   </div>
+  <%end%>
+</div>
 </div>
