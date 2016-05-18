@@ -1,7 +1,30 @@
+
 Detail view
 <%=@space.name%>
 <form action="/bookings/new" method="post">
-  <input id="date" type="date" name="date" required/>
+  <input id="date" type="date" name="date" class="unstyled" required/>
+
+  <script>
+    date.addEventListener('keydown', function(event) {
+      if (event.keyIdentifier == "Down") {
+        event.preventDefault()
+      }
+    }, false);
+
+    $("#date").datepicker({
+        minDate:1, maxDate: 10,
+        onSelect: function(date) {
+          selectedDate = date;
+          alert(date);
+        }
+      });
+
+  </script>
+
   <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
   <input id="request" class="button" type="submit" value="Request to book"/>
+
+
+
+
 </form>
