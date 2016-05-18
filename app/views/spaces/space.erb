@@ -11,8 +11,7 @@ Detail view
       }
     }, false);
 
-    var array = <%=@bookings_dates%>;  
-    console.log(array);
+    var array = <%=@bookings_dates%>;
 
     $("#date").datepicker({
       beforeShowDay: function(date) {
@@ -24,14 +23,10 @@ Detail view
       onSelect: function(date) {
         selectedDate = date;
       }
-      });
+    });
 
   </script>
 
   <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
   <input id="request" class="button" type="submit" value="Request to book"/>
-
-
-
-
 </form>

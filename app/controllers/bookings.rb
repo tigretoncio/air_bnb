@@ -3,10 +3,12 @@ class AirBnb < Sinatra::Base
   get "/bookings" do
 
     if current_user
-      @bookings_made = Booking.all(user_id: current_user.id, order: [:date.asc])
+      @bookings_made = Booking.all(user_id: current_user.id,
+                                   order: [:date.asc])
       current_user_spaces = Space.all(user_id: current_user.id)
       current_user_spaces_ids = current_user_spaces.map {|space| space.id}
-      @bookings_received = Booking.all(space_id: current_user_spaces_ids, order: [:date.asc])
+      @bookings_received = Booking.all(space_id: current_user_spaces_ids,
+                                       order: [:date.asc])
       erb :"bookings/index"
     else
       redirect to "/sessions/new"
@@ -14,8 +16,9 @@ class AirBnb < Sinatra::Base
   end
 
   post "/bookings/new" do
-    confirmed_bookings = Booking.all(space_id: params[:space], date: params[:date],status: "confirmed")
-    if confirmed_bookings.length == 0
+    confirmed_bookings = Booking.all(space_id: params[:space],
+                                     date: params[:date],status: "confirmed")
+    if confirmed_bookings.length < 1
       booking = Booking.create(user: current_user,
                                space: Space.first(id: params[:space]),
                                date: params[:date],
@@ -26,7 +29,7 @@ class AirBnb < Sinatra::Base
         redirect to "/bookings"
       end
     else
-      flash[:errors] = ["Booking's already taken"]
+      flash[:errors] = ["Sorry, this date is already taken"]
     end
   end
 

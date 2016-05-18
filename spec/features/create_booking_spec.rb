@@ -27,13 +27,12 @@ feature "create a new booking" do
     click_link "booking#{Booking.first.id}"
     click_button "Confirm"
     logout
-    params = {name: "Sergio",
-              username: "sergio",
-              email: "sergio@gmail.com",
+    params = {name: "Aday",
+              username: "aday",
+              email: "aday@gmail.com",
               password: "my_password",
               password_confirmation: "my_password"}
     sign_up(params)
-    visit "/spaces"
     click_link "space#{Space.first.id}"
     fill_in :date, with: Time.new(2016,5,30)
     expect{click_button "Request to book"}.to change(Booking, :count).by(0)

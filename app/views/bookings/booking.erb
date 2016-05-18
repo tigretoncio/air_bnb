@@ -1,5 +1,7 @@
 Detail view
+<br>
 <%=@booking.user.name%>
+<br>
 <%=@booking.space.name%>
 <form action="/bookings/<%=@booking.id%>/confirmed" method="post">
   <input id="confirm" class="button" type="submit" value="Confirm"/>
