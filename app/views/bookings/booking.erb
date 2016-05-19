@@ -3,6 +3,9 @@
 <div align="center">
   <h3><%=@booking.space.name%></h3>
   <h5><%=@booking.user.name%></h5>
+  <h6><%=@booking.space.description%></h6>
+  <h7>£<%=@booking.space.price%>per night</h7>
+  <br>
   <h8><%=@booking.date%></h8>
   <br>
   <h10><%=@booking.status.capitalize%></h10>
@@ -27,7 +30,7 @@
             <td><a href="/bookings/<%=other_booking.id%>">...More</a></td>
         </tr>
         <tr>
-          <td class="ellipsis"><%=other_booking.status%></td>
+          <td class="ellipsis"><%=other_booking.status.capitalize%></td>
          <td></td>
         </tr>
         <br>
