@@ -1,18 +1,37 @@
-Detail view
-<br>
-<%=@booking.user.name%>
-<br>
-<%=@booking.space.name%>
-<form action="/bookings/<%=@booking.id%>/confirmed" method="post">
-  <input id="confirm" class="button" type="submit" value="Confirm"/>
-</form>
-<form action="/bookings/<%=@booking.id%>/denied" method="post">
-  <input class="button" type="submit" value="Deny"/>
-</form>
-<br>
-<p>Other requests for this space</p>
-  <% @other_bookings.each do |other_booking| %>
-    <a href="/bookings/<%=other_booking.id%>">
-      <p><%=other_booking.user.name%>
-    </a>
-  <%end%>
+<h1 style="margin-top:5px">Booking</h1>
+<br><br>
+<div align="center">
+  <h3><%=@booking.space.name%></h3>
+  <h5><%=@booking.user.name%></h5>
+  <h8><%=@booking.date%></h8>
+  <br>
+  <h10><%=@booking.status.capitalize%></h10>
+  <br>
+  <br>
+  <form action="/bookings/<%=@booking.id%>/confirmed" method="post">
+    <input id="confirm" class="go_button" type="submit" value="Confirm"/>
+  </form>
+  <form action="/bookings/<%=@booking.id%>/denied" method="post">
+    <input style="background-color:#808080" class="go_button" type="submit" value="Deny"/>
+  </form>
+  <br>
+  <div align="center">Other Bookings
+    <% @other_bookings.each do |other_booking| %>
+      <table class="normal">
+        <tr>
+          <td class="ellipsis"><%=other_booking.date%></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%=other_booking.user.name%></td>
+            <td><a href="/bookings/<%=other_booking.id%>">...More</a></td>
+        </tr>
+        <tr>
+          <td class="ellipsis"><%=other_booking.status%></td>
+         <td></td>
+        </tr>
+        <br>
+      </table>
+    <%end%>
+  </div>
+</div>

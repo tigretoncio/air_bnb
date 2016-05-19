@@ -6,8 +6,10 @@
   <br><br>
   <form method='get' action='/spaces'>
     Available from: <input type="date" name="available_from" required/>
+    <br>
     Available to: <input type="date" name="available_to" required/>
-    <input type='submit' value='List Spaces' class="button">
+    <br>
+    <input type='submit' value='List Spaces' class="go_button">
   </form>
 </div>
 <br><br>
@@ -15,29 +17,31 @@
 
 <div align="center">
   <% @spaces.each do |space| %>
-  <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
-    <div>
-      <table class="parent-div">
-        <tr>
-          <td class="ellipsis"><%=space.name%></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><%=space.description%></td>
-          <td>Book</td>
-        </tr>
-        <tr>
-          <td class="ellipsis"><%=space.price%></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><p class="username">by <strong><%=space.user.name%></strong> (@<%=space.user.username%>)</p></td>
-          <td></td>
-        </tr>
-      </table>
-      <p></p>
-      <div class="tiny_space"></div>
-    </a>
+  <div>
+    <table class="normal">
+      <tr>
+        <td class="ellipsis"><%=space.name%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%=space.description%></td>
+        <td>
+          <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
+            Book
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="ellipsis"><%=space.price%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><p class="username">by <strong><%=space.user.name%></strong> (@<%=space.user.username%>)</p></td>
+        <td></td>
+      </tr>
+    </table>
+    <p></p>
+    <div class="tiny_space"></div>
   </div>
   <%end%>
 </div>
