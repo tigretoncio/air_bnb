@@ -1,4 +1,32 @@
-<p>Please enter your details to login</p>
+<div class="testbox-login">
+  <h1>Please Log in</h1>
+
+  <form action="/sessions/login" method="post">
+  <hr>
+  <hr>
+
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
+  <input placeholder ="Email" type="email" name="emailLogin" value="<%=flash[:email]%>" required/>
+
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input placeholder ="Password" type="password" name="passwordLogin" required/>
+
+  <input class="button" id="go_button" type="submit" value="Login"/>
+  </form>
+  <br>
+  <a class="link-login" href="/users/password_recovery">I've forgotten my password</a>
+  <div class="mini_space"></div>
+  <a class="link-login" href="/users/new">Don't have an account yet?</a>
+
+</div>
+
+
+  <p style="opacity:0.0;"> Please enter your details to login </p>
+
+
+
+
+<!-- <p>Please enter your details to login</p>
 <form action="/sessions/login" method="post">
   <input placeholder ="Email" type="email" name="emailLogin" value="<%=flash[:email]%>" required/>
   <div class="tiny_space"></div>
@@ -10,3 +38,4 @@
 <a class="link" href="/users/password_recovery">I've forgotten my password</a>
 <div class="mini_space"></div>
 <a class="link" href="/users/new">Don't have an account yet?</a>
+ -->
