@@ -1,33 +1,46 @@
 <h1>My Bookings</h1>
-
-<div class="tiny_space"></div>
+<body>
+<section class ="column bookings_made">
 <div align="left"> Bookings I've made
   <% @bookings_made.each do |booking| %>
-    <a href="/spaces/<%=booking.space.id%>">
-      <div style="width:75%">
-        <p><%=booking.id%></p>
-        <p><%=booking.date%></p>
-        <p><%=booking.status%></p>
-        <p><%=booking.space.name%></p>
-        <p class="username">by <strong><%=booking.user.name%></strong></p>
-        <div class="tiny_space"></div>
-      </div>
-    </a>
+    <table class="parent-div">
+      <tr>
+        <td class="ellipsis"><%=booking.date%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%=booking.space.name%></td>
+          <td><a href="/bookings/<%=booking.id%>">...More</a></td>
+      </tr>
+      <tr>
+        <td class="ellipsis"><%=booking.status%></td>
+        <td></td>
+      </tr>
+      <br>
+    </table>
   <%end%>
-</div>
 
-<div class="tiny_space"></div>
+</div>
+</section>
+
+<section class ="column bookings_received">
 <div align="right"> Bookings I've receieved
   <% @bookings_received.each do |booking| %>
-    <a id="booking<%=booking.id%>" href="/bookings/<%=booking.id%>">
-      <div style="width:75%">
-        <p><%=booking.id%></p>
-        <p><%=booking.date%></p>
-        <p><%=booking.status%></p>
-        <p><%=booking.space.name%></p>
-        <p class="username">by <strong><%=booking.user.name%></strong></p>
-        <div class="tiny_space"></div>
-      </div>
-    </a>
+    <table class="parent-div">
+      <tr>
+        <td class="ellipsis"><%=booking.date%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%=booking.space.name%></td>
+          <td><a id="booking<%=booking.id%>" href="/bookings/<%=booking.id%>">...More</a></td>
+      </tr>
+      <tr>
+        <td class="ellipsis"><%=booking.status%></td>
+        <td></td>
+      </tr>
+      <br>
+    </table>
   <%end%>
 </div>
+</section>

@@ -173,11 +173,23 @@ a.button:hover {
 
 
 
+.column {
+  display: inline-block;
+  height: 80vh;
 
+}
 
+.bookings_made {
+  width: 49%;
+  overflow: hidden;
+  position: relative;
+}
 
-
-
+.bookings_received {
+  width: 49%;
+  overflow: hidden;
+  position: relative;
+}
 
 
 
@@ -518,10 +530,6 @@ a.button:hover {
     min-width: 0;
 }
 
-.parent-div {
-    display: flex;
-}
-
 
 table{
     border: 1px solid black;
@@ -530,6 +538,8 @@ table{
 th, td {
     padding: 5px;
 }*/
+.parent-div {
+}
 
 
 table {
@@ -538,6 +548,9 @@ table {
     border-collapse: collapse;
 }
 td {
+  padding-left: 10px;
+    content-align: left;
+    width: 60%;
     max-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -548,9 +561,6 @@ tr td:nth-child(2) { /* I don't think they are 0 based */
    text-align: center;
 }
 
-tr td:nth-child(3) { /* I don't think they are 0 based */
-   text-align: center;
-}
 
 
 
