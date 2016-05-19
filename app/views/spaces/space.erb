@@ -1,32 +1,38 @@
+<h1 style="margin-top:5px">Space</h1>
+<br><br>
+<div align="center">
+  <h3><%=@space.name%></h3>
+  <h6><%=@space.description%></h6>
+  <br><br>
+  <%if @space.user != current_user %>
+  <h4>Pick a night</h4>
+  <form action="/bookings/new" method="post">
+    <input id="date" type="date" name="date" class="unstyled" required/>
 
-Detail view
-<%=@space.name%>
-<form action="/bookings/new" method="post">
-  <input id="date" type="date" name="date" class="unstyled" required/>
+    <script>
+      date.addEventListener('keydown', function(event) {
+        if (event.keyIdentifier == "Down") {
+          event.preventDefault()
+        }
+      }, false);
 
-  <script>
-    date.addEventListener('keydown', function(event) {
-      if (event.keyIdentifier == "Down") {
-        event.preventDefault()
-      }
-    }, false);
+      var array = <%=@bookings_dates%>;
 
-    var array = <%=@bookings_dates%>;
-
-    $("#date").datepicker({
-      beforeShowDay: function(date) {
-        var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-        return [ array.indexOf(string) == -1 ]
-      },
-      dateFormat: 'yy-mm-dd',
-      minDate:0, maxDate: 40,
-      onSelect: function(date) {
-        selectedDate = date;
-      }
-    });
-
-  </script>
-
-  <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
-  <input id="request" class="button" type="submit" value="Request to book"/>
-</form>
+      $("#date").datepicker({
+        beforeShowDay: function(date) {
+          var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+          return [ array.indexOf(string) == -1 ]
+        },
+        dateFormat: 'yy-mm-dd',
+        minDate:0, maxDate: 40,
+        onSelect: function(date) {
+          selectedDate = date;
+        }
+      });
+    </script>
+    <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
+    <br>
+    <input id="request" class="go_button" type="submit" value="Request to book"/>
+  </form>
+  <%end%>
+</div>

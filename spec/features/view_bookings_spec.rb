@@ -38,10 +38,8 @@ feature "view booking" do
     logout
     login
     visit "/bookings"
-    expect(page).to have_content "Maria"
-    expect(page).to have_content "Sergio"
-    expect(page).to have_content "Amy's house"
-    expect(page).to have_content "2016-05-30"
+    expect(page).to have_content("Amy's house", count: 2)
+    expect(page).to have_content("2016-05-30", count: 2)
   end
 
   scenario "viewing each booking I've received in more detail" do
