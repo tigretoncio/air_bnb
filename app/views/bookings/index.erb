@@ -3,7 +3,7 @@
 <section class ="column bookings_made">
   <div align="left"> Bookings I've made
     <% @bookings_made.each do |booking| %>
-      <table class="parent-div">
+      <table class="normal">
         <tr>
           <td class="ellipsis"><%=booking.date%></td>
           <td></td>
@@ -23,9 +23,9 @@
 </section>
 
 <section class ="column bookings_received">
-  <div align="right"> Bookings I've receieved
+  <div align="right"> Bookings I've received
     <% @bookings_received.each do |booking| %>
-      <table class="parent-div">
+      <table class="normal">
         <tr>
           <td class="ellipsis"><%=booking.date%></td>
           <td></td>
