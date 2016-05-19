@@ -2,7 +2,7 @@ module SessionHelpers
 
   def create_space(params = {name: "Amy's house",
                              description: "Amy's house is nice",
-                             price: "£30",
+                             price: 30,
                              available_from: Time.new(2016,5,25),
                              available_to: Time.new(2016,5,30)})
     visit "/spaces/new"
