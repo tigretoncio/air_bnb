@@ -1,4 +1,7 @@
 feature "create a new booking" do
+  before do
+    allow(SendSignupAck).to receive(:call)
+  end
   scenario "add a new booking to list of bookings" do
     pre_create_booking
     expect{create_booking}.to change(Booking, :count).by(1)
@@ -28,14 +31,14 @@ feature "create a new booking" do
     click_button "Confirm"
     logout
     params = {name: "Aday",
-              username: "aday",
-              email: "aday@gmail.com",
-              password: "my_password",
-              password_confirmation: "my_password"}
-    sign_up(params)
-    click_link "space#{Space.first.id}"
-    fill_in :date, with: Time.new(2016,5,30)
-    expect{click_button "Request to book"}.to change(Booking, :count).by(0)
-  end
+      username: "aday",
+      email: "aday@gmail.com",
+      password: "my_password",
+      password_confirmation: "my_password"}
+      sign_up(params)
+      click_link "space#{Space.first.id}"
+      fill_in :date, with: Time.new(2016,5,30)
+      expect{click_button "Request to book"}.to change(Booking, :count).by(0)
+    end
 
-end
+  end

@@ -1,5 +1,9 @@
 feature "signing up" do
 
+  before do
+    allow(SendSignupAck).to receive(:call)
+  end
+
   scenario "sign up with valid credentials" do
     expect { sign_up }.to change(User, :count).by(1)
     expect(page).to have_content "Hello Amy!"

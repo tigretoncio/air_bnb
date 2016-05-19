@@ -1,6 +1,7 @@
 feature "view spaces" do
 
   before do
+    allow(SendSignupAck).to receive(:call)
     sign_up
     create_space
   end

@@ -1,5 +1,6 @@
 feature "password recovery" do
   before do
+    allow(SendSignupAck).to receive(:call)
     sign_up
   end
 

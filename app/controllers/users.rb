@@ -12,6 +12,7 @@ class AirBnb < Sinatra::Base
       flash[:errors] = user.errors.full_messages
     else
       session[:user_id] = user.id
+      SendSignupAck.call(user)
     end
     redirect to "/spaces"
   end
