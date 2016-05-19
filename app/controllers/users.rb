@@ -26,11 +26,9 @@ class AirBnb < Sinatra::Base
     user = User.first(email: params[:email])
     if user
       user.store_token
-      flash[:errors] = ["Please check your emails",
-                        "token=#{user.password_token}"]
-    else
-      flash[:errors] = ["Please check your emails"]
+      SendRecoverLink.call(user)
     end
+    flash[:errors] = ["Please check your emails"]
     redirect to "/spaces"
   end
 

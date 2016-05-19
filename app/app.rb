@@ -12,4 +12,5 @@ require_relative "controllers/users"
 require_relative "controllers/sessions"
 require_relative "controllers/bookings"
 require_relative "lib/send_signup_ack"
+require_relative "lib/send_recovery_link"
 Dotenv.load
