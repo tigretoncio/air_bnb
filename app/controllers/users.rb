@@ -1,3 +1,4 @@
+require 'mailgun'
 class AirBnb < Sinatra::Base
 
   get "/users/new" do
