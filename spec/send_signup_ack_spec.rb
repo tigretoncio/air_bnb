@@ -1,10 +1,13 @@
 require './app/lib/send_signup_ack'
+require 'dotenv'
 
 describe SendSignupAck do
-  DOMAIN = "sandbox095db3c079904d219e00440da5443f4c.mailgun.org"
+  # DOMAIN = "sandbox095db3c079904d219e00440da5443f4c.mailgun.org"
  let(:user){double :user, email: "test@test.com", password_token: "12345678"}
  let(:mail_gun_client){double :mail_gun_client}
- let(:sandbox_domain_name) { DOMAIN }
+ let(:sandbox_domain_name) { ENV['DOMAIN'] }
+
+ Dotenv.load
 
 # ENV["sandbox_domain_name"]
  it "sends a message to mailgun when it is called" do
