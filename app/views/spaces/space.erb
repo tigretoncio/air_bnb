@@ -2,9 +2,10 @@
 <br><br>
 <div align="center">
   <h3><%=@space.name%></h3>
-  <p><%=@space.description%></p>
+  <h6><%=@space.description%></h6>
   <br><br>
-  <p>Pick a night</p>
+  <%if @space.user != current_user %>
+  <h4>Pick a night</h4>
   <form action="/bookings/new" method="post">
     <input id="date" type="date" name="date" class="unstyled" required/>
 
@@ -28,11 +29,10 @@
           selectedDate = date;
         }
       });
-
     </script>
-
     <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
     <br>
     <input id="request" class="go_button" type="submit" value="Request to book"/>
   </form>
+  <%end%>
 </div>
