@@ -37,6 +37,13 @@ feature "view spaces" do
   end
 
   scenario "viewing each space in more detail" do
+    logout
+    params = {name: "Sergio",
+              username: "sergio",
+              email: "sergio@gmail.com",
+              password: "my_password",
+              password_confirmation: "my_password"}
+    sign_up(params)
     click_link "space#{Space.first.id}"
     expect(page).to have_content "Amy's house"
     expect(page).to have_content "Pick a night"
