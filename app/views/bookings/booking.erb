@@ -11,9 +11,11 @@
   <h10><%=@booking.status.capitalize%></h10>
   <br>
   <br>
+  <%if @booking.status != "confirmed"%>
   <form action="/bookings/<%=@booking.id%>/confirmed" method="post">
     <input id="confirm" class="go_button" type="submit" value="Confirm"/>
   </form>
+  <%end%>
   <form action="/bookings/<%=@booking.id%>/denied" method="post">
     <input style="background-color:#808080" class="go_button" type="submit" value="Deny"/>
   </form>
