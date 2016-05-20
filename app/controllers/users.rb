@@ -13,7 +13,7 @@ class AirBnb < Sinatra::Base
       flash[:errors] = user.errors.full_messages
     else
       session[:user_id] = user.id
-      SendSignupAck.call(user)
+      # SendSignupAck.call(user)
     end
     redirect to "/spaces"
   end
@@ -26,7 +26,7 @@ class AirBnb < Sinatra::Base
     user = User.first(email: params[:email])
     if user
       user.store_token
-      SendRecoverLink.call(user)
+      # SendRecoverLink.call(user)
     end
     flash[:errors] = ["Please check your emails"]
     redirect to "/spaces"
