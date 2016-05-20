@@ -168,7 +168,9 @@ a.button:hover {
   color: blue;
 }
 
-
+.errors {
+  color: red;
+}
 
 
 .column {

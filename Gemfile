@@ -13,6 +13,8 @@ gem "pg"
 gem "database_cleaner"
 gem "rake"
 gem "timecop"
+gem 'mailgun-ruby'
+gem 'dotenv'
 
 
 group :test do

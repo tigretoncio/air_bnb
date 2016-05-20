@@ -1,5 +1,9 @@
 feature "view booking" do
 
+  before do
+    allow(SendSignupAck).to receive(:call)
+  end
+
   scenario "view list of bookings via 'Bookings' link at top of page" do
     sign_up
     visit "/bookings"

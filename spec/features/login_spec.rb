@@ -1,5 +1,8 @@
 feature "logging in" do
   before do
+    allow(SendSignupAck).to receive(:call)
+  end
+  before do
     sign_up
     logout
   end
