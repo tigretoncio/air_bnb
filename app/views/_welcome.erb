@@ -1,10 +1,10 @@
 <ul>
   <li><a href="/spaces">Spaces</a></li>
   <li><a href="/bookings">Bookings</a></li>
-  <%if current_user %>
+  <% if current_user %>
     <li id="hello">Hello <%=current_user.name%>!</li>
     <li style="float:right"><a href="/sessions/logout">Logout</a></li>
-  <%else%>
+  <% else %>
     <li style="float:right"><a href="/sessions/new">Login</a></li>
-  <%end%>
+  <% end %>
 </ul>

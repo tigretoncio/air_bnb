@@ -1,4 +1,4 @@
-<%if current_user %>
+<% if current_user %>
   <h1 style="margin-top:5px">Add a New Space</h1>
   <br><br>
   <div align="center">
@@ -6,15 +6,20 @@
       <input placeholder="Name of space" type="text" name="name" class="my_text_box" required/>
       <br>
       <br>
-      <div class="txtarea"><textarea rows = "10" placeholder ="Write about your space..." name="description" class="my_text_box" required></textarea></div>
+      <div class="txtarea">
+        <textarea rows = "10" placeholder ="Write about your space..." name="description" class="my_text_box" required></textarea>
+      </div>
       <br>
-      £ <input placeholder="Price per night" type="number" name="price" class="my_text_box" id="last-one" required/>
+      <label>£</label>
+      <input placeholder="Price per night" type="number" name="price" class="my_text_box" id="last-one" required/>
       <br>
-      Available from: <input type="date" name="available_from" class="my_date_box" required/>
-      Available to: <input type="date" name="available_to" class="my_date_box" required/> <br>
+      <label>Available from:</label>
+      <input type="date" name="available_from" class="my_date_box" required/>
+      <label>Available to:</label>
+      <input type="date" name="available_to" class="my_date_box" required/> <br>
       <input class="go_button" type="submit" value="Add space"/>
     </form>
   </div>
-<%else%>
+<% else %>
   <p>Please login to create a space</p>
-<%end%>
+<% end %>

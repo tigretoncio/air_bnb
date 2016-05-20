@@ -4,17 +4,17 @@
   <h3><%=@space.name%></h3>
   <h6><%=@space.description%></h6>
   <br><br>
-  <%if @space.user != current_user %>
-  <h4>Pick a night</h4>
-  <form action="/bookings/new" method="post">
-    <input id="date" type="date" name="date" class="unstyled" required/>
+  <% if @space.user != current_user %>
+    <h4>Pick a night</h4>
+    <form action="/bookings/new" method="post">
+      <input id="date" type="date" name="date" class="unstyled" required/>
 
-    <script>
-      date.addEventListener('keydown', function(event) {
-        if (event.keyIdentifier == "Down") {
-          event.preventDefault()
-        }
-      }, false);
+      <script>
+        date.addEventListener('keydown', function(event) {
+          if (event.keyIdentifier == "Down") {
+            event.preventDefault()
+          }
+        }, false);
 
       var confirmed_dates_array = <%=@bookings_dates%>;
       var available_from = "<%=@available_from.strftime("%y-%m-%d")%>"
