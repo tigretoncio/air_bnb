@@ -10,7 +10,7 @@ describe SendRecoverLink do
  Dotenv.load
 
  it "sends a message to mailgun when it is called" do
-   params = {from: "airbnb@mail.com",
+   params = {from: "makers@mail.com",
      to: user.email,
      subject: "reset your password",
      text: "click here to reset your password https://air-bnb-aams.herokuapp.com/users/password_reset?token=#{user.password_token}" }
