@@ -10,7 +10,7 @@ class SendRecoverLink
  end
 
  def call(user)
-   mailer.send_message(ENV["DOMAIN"], {from: "airbnb@mail.com",
+   mailer.send_message(ENV["DOMAIN"], {from: "makers@mail.com",
        to: user.email,
        subject: "reset your password",
        text: "click here to reset your password https://air-bnb-aams.herokuapp.com/users/password_reset?token=#{user.password_token}" })

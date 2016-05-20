@@ -10,9 +10,9 @@ class SendSignupAck
   end
 
   def call(user)
-    mailer.send_message(ENV['DOMAIN'], {from: "airbnb@mail.com",
+    mailer.send_message(ENV['DOMAIN'], {from: "makers@mail.com",
      to: user.email,
-     subject: "Welcome to Airbnb",
+     subject: "Welcome to Makersbnb",
      text: "Bienvenido! Lo vas a pasar muy bien aqui" })
   end
 
