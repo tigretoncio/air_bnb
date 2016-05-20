@@ -64,7 +64,7 @@ It should be self-explanatory.  Functions added:
 - Model View Controller used
 - Use of Sinatra modular with partials to separate concerns
 - Best practices used in terms of storing passwords, (Salted hashes, use of Bcrypt)
--
+- Use of JQuery UI and datepicker to deal with complex calendar functions
 
 #Agile reflection
 
@@ -76,6 +76,7 @@ We feel we have succesfully adopted an agile methodology:
 - Good response to change and continuous development
 - Good use of code reuse on the user access management side
 - Loads of fun and a sense of achivement
+- Good troubleshooting effort when things became messy
 
 #General comment and reflection
 
@@ -83,16 +84,16 @@ Although at the beginning some individuals of the team were  wary of the way we 
 
 It took some time to organise ourselves in pairs, as it was quite complex to make a parallel path for the two pairs to work on, that did not happen until Tuesday mid-day.  However all the interaction within the group cemented the understanding of the team about the task, and built strong relationships.
 
-We specifically asked Amy to become Chief Architect, and it has proven an excellent decision, Amy's clear way of seeing through complexity has taken where we are.  She even has learnt Spanish, and now agrees that it's easier than JavaScript, (no pasa nada, Amy).
+We specifically asked Amy to become Chief Architect, and it has proven an excellent decision. Amy's way of seeing a path through complexity has made this project a success.  She even has learnt Spanish, and now agrees that it's easier than JavaScript, (no pasa nada, Amy).
 
-Maria has been instrumental in chasing complexitiy away with the relationship models, and she has been crowned datamapper queen by popular acclamation.  In the last part of the project, she has unleashed her design skills and has tamed CSS in her straight, efficient way.  In the meantime she was dealing with poor daughter Elena getting sick and all the heroic things mums do on the daily basis.
+Maria has been instrumental in chasing confusion away with the relationship models, and she has been crowned datamapper queen by popular acclamation.  In the last part of the project, she has wildly unleashed her design skills and has tamed CSS in her straight, efficient way.  In the meantime she was dealing with daughter Elena getting sick and all the heroic things mums do on a daily basis.
 
-Aday has found errors that could have taken us months to debug, and report those in a nice way, are you sure you have added this require here, or that variable there? In his spare time he has teached HTML and CSS to Sergio and worked in the pub to serve pints to the Makers people.
+Aday has found errors that could have taken us months to debug, and report those in a nice way, "are you sure you have added this require here, or that variable there?" In his spare time he has teached HTML and CSS to Sergio and worked in the pub to serve pints to the Makers people.
 
-Special mention goes to Sergio, who has not stopped chatting all week, (most of it in Spanish), and entertained (!?) the team with his (tasteless) sheeps jokes, while in the background he was micromanaging the plumber who came to fix a pipe leak. That's what it's called extreme added value, (and multitasking).
+Special mention goes to Sergio, who has not stopped chatting all week, (most of it in Spanish), and entertained (!?) the team with his (tasteless, perhaps) sheeps jokes, while in the background he was micromanaging the plumber who came to fix a pipe leak. That's what it's called extreme added value, (and multitasking).
 
-We have worked as a team and the result is here. We did not know how to work in an agile way, however we feel we have shown the XP values and we put our strengths and skills together to build a great solution.
+We have worked as a team and the result is here. We did not know how to work in an agile way, however we feel we have shown the XP values and we put our strengths together to build a great solution.
 
-The feeling of elation of seeing 50+ tests all passing green and with a 100% coverage is something difficult to achieve. We made it happen here.
+The feeling of elation of seeing 50+ tests all passing green and with a 100% coverage is something difficult to emulate elsewhere. We made it happen this week with this project.
 
 You don't like the shiny look of the website?  You consider that the controllers are fat and smelly?  Are you Sandi Metz and would like to make comments about it? Sure, Pull requests are always accepted, (now that we know how to resolve conflict merges :-)
