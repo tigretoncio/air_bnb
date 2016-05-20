@@ -13,7 +13,7 @@ describe SendRecoverLink do
    params = {from: "airbnb@mail.com",
      to: user.email,
      subject: "reset your password",
-     text: "click here to reset your password http://localhost:9292/users/password_reset?token=#{user.password_token}" }
+     text: "click here to reset your password https://air-bnb-aams.herokuapp.com/users/password_reset?token=#{user.password_token}" }
      expect(mail_gun_client).to receive(:send_message).with(sandbox_domain_name, params)
      described_class.call(user, mail_gun_client)
    end
