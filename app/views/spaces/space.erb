@@ -16,23 +16,26 @@
           }
         }, false);
 
-        var array = <%=@bookings_dates%>;
+      var confirmed_dates_array = <%=@bookings_dates%>;
+      var available_from = "<%=@available_from.strftime("%y-%m-%d")%>"
+      var available_to = "<%=@space.available_to.strftime("%y-%m-%d")%>"
 
-        $("#date").datepicker({
-          beforeShowDay: function(date) {
-            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-            return [ array.indexOf(string) == -1 ]
-          },
-          dateFormat: 'yy-mm-dd',
-          minDate:0, maxDate: 40,
-          onSelect: function(date) {
-            selectedDate = date;
-          }
-        });
-      </script>
-      <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
-      <br>
-      <input id="request" class="go_button" type="submit" value="Request to book"/>
-    </form>
-  <% end %>
+
+      $("#date").datepicker({
+        beforeShowDay: function(date) {
+          var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+          return [ confirmed_dates_array.indexOf(string) == -1 ]
+        },
+        dateFormat: 'yy-mm-dd',
+        minDate:available_from, maxDate: available_to,
+        onSelect: function(date) {
+          selectedDate = date;
+        }
+      });
+    </script>
+    <input id="space" type="hidden" value="<%=@space.id%>" name="space"/>
+    <br>
+    <input id="request" class="go_button" type="submit" value="Request to book"/>
+  </form>
+  <%end%>
 </div>
