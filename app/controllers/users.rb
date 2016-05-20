@@ -1,3 +1,4 @@
+require 'mailgun'
 class AirBnb < Sinatra::Base
 
   get "/users/new" do
@@ -12,6 +13,7 @@ class AirBnb < Sinatra::Base
       flash[:errors] = user.errors.full_messages
     else
       session[:user_id] = user.id
+      SendSignupAck.call(user)
     end
     redirect to "/spaces"
   end
@@ -24,11 +26,9 @@ class AirBnb < Sinatra::Base
     user = User.first(email: params[:email])
     if user
       user.store_token
-      flash[:errors] = ["Please check your emails",
-                        "token=#{user.password_token}"]
-    else
-      flash[:errors] = ["Please check your emails"]
+      SendRecoverLink.call(user)
     end
+    flash[:errors] = ["Please check your emails"]
     redirect to "/spaces"
   end
 

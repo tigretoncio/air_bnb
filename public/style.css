@@ -171,6 +171,11 @@ a.button:hover {
   color: blue;
 }
 
+.errors {
+  color: red;
+}
+
+
 .column {
  display: inline-block;
  height: 80vh;
