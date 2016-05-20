@@ -1,19 +1,10 @@
-<div style="text-align:center">
-  <div style="float:left">
-    <a class="link_no_dec" href="/spaces">Home</a>
-  </div>
-  <div style="float:right">
-    <%if current_user %>
-      <a class="link_no_dec" href="/spaces">Spaces |</a>
-      <a class="link_no_dec" href="/sessions/logout">Logout</a>
-      <a class="link_no_dec" href="/bookings">Bookings |</a>
-    <%else%>
-      <a class="link_no_dec" href="/sessions/new">Login</a>
-    <%end%>
-  </div>
-  <div>
-    <%if current_user %>
-      <h3>Hello <%=current_user.name%>!</h3>
-    <%end%>
-  </div>
-</div>
+<ul>
+  <li><a href="/spaces">Spaces</a></li>
+  <li><a href="/bookings">Bookings</a></li>
+  <%if current_user %>
+    <li id="hello">Hello <%=current_user.name%>!</li>
+    <li style="float:right"><a href="/sessions/logout">Logout</a></li>
+  <%else%>
+    <li style="float:right"><a href="/sessions/new">Login</a></li>
+  <%end%>
+</ul>

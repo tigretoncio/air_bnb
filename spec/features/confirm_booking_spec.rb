@@ -53,7 +53,7 @@ feature "confirm bookings I've received" do
     visit "/bookings"
     click_link "booking#{booking.id}"
     expect{click_button "Confirm"}.to change{Booking.first.status}
-    expect(page).to have_content "confirmed"
+    expect(page).to have_content "Confirmed"
   end
 
   scenario "change status of other bookings once one is confirmed" do
@@ -72,7 +72,7 @@ feature "confirm bookings I've received" do
     visit "/bookings"
     click_link "booking#{booking.id}"
     click_button "Confirm"
-    expect(page).to have_content "denied"
+    expect(page).to have_content "Denied"
   end
 
 

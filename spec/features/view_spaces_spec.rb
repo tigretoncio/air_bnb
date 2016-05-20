@@ -12,7 +12,7 @@ feature "view spaces" do
   end
 
   scenario "view list of spaces" do
-    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:"£40", available_from: Time.new(2016,5,25), available_to: Time.new(2016,5,30)}
+    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:40, available_from: Time.new(2016,5,25), available_to: Time.new(2016,5,30)}
     create_space(params1)
     visit "/spaces"
     expect(page).to have_content "Amy's house"
@@ -20,7 +20,7 @@ feature "view spaces" do
   end
 
   scenario "view list of spaces in ascending price order" do
-    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:"£20", available_from: Time.new(2016,5,25), available_to: Time.new(2016,5,30)}
+    params1= {name:"Amy's other house", description:"Amy's other house is also nice", price:20, available_from: Time.new(2016,5,25), available_to: Time.new(2016,5,30)}
     create_space(params1)
     first_space_index = page.body.index("Amy's house")
     second_space_index = page.body.index("Amy's other house")
@@ -28,7 +28,7 @@ feature "view spaces" do
   end
 
   scenario "filtering spaces" do
-    params1= {name:"Maria's other house", description:"Maria's other house is also nice", price:"£20", available_from: Time.new(2016,6,25), available_to: Time.new(2016,6,30)}
+    params1= {name:"Maria's other house", description:"Maria's other house is also nice", price:20, available_from: Time.new(2016,6,25), available_to: Time.new(2016,6,30)}
     create_space(params1)
     fill_in :available_from, with: Time.new(2016,6,26)
     fill_in :available_to, with: Time.new(2016,6,29)
@@ -38,9 +38,16 @@ feature "view spaces" do
   end
 
   scenario "viewing each space in more detail" do
+    logout
+    params = {name: "Sergio",
+              username: "sergio",
+              email: "sergio@gmail.com",
+              password: "my_password",
+              password_confirmation: "my_password"}
+    sign_up(params)
     click_link "space#{Space.first.id}"
     expect(page).to have_content "Amy's house"
-    expect(page).to have_content "Detail view"
+    expect(page).to have_content "Pick a night"
     expect(page).to have_css("form input#request")
     expect(page).to have_css("form input#date")
   end

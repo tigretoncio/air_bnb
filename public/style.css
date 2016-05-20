@@ -1,7 +1,5 @@
 fieldset, img {border:0}
 
-ol, ul, li {list-style:none}
-
 :focus {outline:none}
 
 body,
@@ -15,7 +13,6 @@ select {
 
 p {
   font-size: 12px;
-  width: 150px;
   display: inline-block;
   margin-left: 18px;
 }
@@ -176,266 +173,288 @@ a.button:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#div2 {
-    white-space: nowrap;
-    width: 53em;
+.column {
+ display: inline-block;
+ height: 80vh;
+
+}
+
+.bookings_made {
+ width: 49%;
+ overflow: hidden;
+ position: relative;
+}
+
+.bookings_received {
+ width: 49%;
+ overflow: hidden;
+ position: relative;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    text-overflow: ellipsis;
-}
-table{
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
+    background-color: #333;
 }
 
-.my_text_box {
-  width: 500px;
-  margin-top: 10px;
- }
-
-.my_date_box {
-  width: 130px;
-  margin-top: 10px;
-  margin-right: 10px;
- }
-
-#last-one {
-  margin-bottom: 20px;
+li {
+    float: left;
+    border-right:1px solid #bbb;
 }
 
-.txtarea {
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+#hello {
+  display: block;
+  color: white;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-right: none;
 }
 
-::-webkit-input-placeholder {
-   text-align: center;
-   line-height:140px;
+.active {
+    background-color: #4CAF50;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -543,42 +562,24 @@ th, td {
 }
 
 
-/* .ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}*/
+table.normal {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
+table.normal td {
+    padding-left: 10px;
+    content-align: left;
+    width: 60%;
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-
-
-/***FIRST STYLE THE BUTTON***/
-input#go_button{
-  margin-top: 20px;
-  align-content: center;
-  cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
-  padding:5px 25px; /*add some padding to the inside of the button*/
-  background:#35b128; /*the colour of the button*/
-  border:1px solid #33842a; /*required or the default border for the browser will appear*/
-  /*give the button curved corners, alter the size as required*/
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  /*give the button a drop shadow*/
-  -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
-  -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
-  box-shadow: 0 0 4px rgba(0,0,0, .75);
-  /*style the text*/
-  color:#f3f3f3;
-  font-size:1.1em;
-
-/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
-input#go_button:hover, input#gobutton:focus{
-  background-color :#399630; /*make the background a little darker*/
-  /*reduce the drop shadow size to give a pushed button effect*/
-  -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
-  -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
-  box-shadow: 0 0 1px rgba(0,0,0, .75);
+tr td:nth-child(2) { /* I don't think they are 0 based */
+   text-align: center;
 }
 
 
@@ -593,8 +594,9 @@ input#go_button:hover, input#gobutton:focus{
 
 
 
+
 /***FIRST STYLE THE BUTTON***/
-input#go_button{
+input.go_button{
   margin-top: 20px;
   align-content: center;
   cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
@@ -614,13 +616,10 @@ input#go_button{
   font-size:1.1em;
 }
 /***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
-input#go_button:hover, input#gobutton:focus{
+input.go_button:hover, input.gobutton:focus{
   background-color :#399630; /*make the background a little darker*/
   /*reduce the drop shadow size to give a pushed button effect*/
   -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
   -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
   box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
-
-
-
