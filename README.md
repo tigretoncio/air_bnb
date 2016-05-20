@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MariaRomero/air_bnb.svg?branch=master)](https://travis-ci.org/MariaRomero/air_bnb)
+[![Coverage Status](https://coveralls.io/repos/github/MariaRomero/air_bnb/badge.svg?branch=master)](https://coveralls.io/github/MariaRomero/air_bnb?branch=master)
 Makers Bnb
 ---
 #Authors
