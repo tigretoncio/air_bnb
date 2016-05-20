@@ -18,12 +18,13 @@ class AirBnb < Sinatra::Base
   end
 
   post "/spaces" do
-    space = Space.create(user: current_user,
+    space_params = {user: current_user,
                          name: params[:name],
                          description: params[:description],
                          price: params[:price],
                          available_from: params[:available_from],
-                         available_to: params[:available_to])
+                         available_to: params[:available_to]}
+    space = Space.authenticate(space_params)
     if space.id.nil?
       flash[:errors] = space.errors.full_messages
       redirect to "/spaces/new"
@@ -37,6 +38,7 @@ class AirBnb < Sinatra::Base
       @space = Space.first(id: params[:id])
       bookings = Booking.all(space_id: @space.id, status: "confirmed")
       @bookings_dates = bookings.map {|booking| booking.date.strftime("%Y-%m-%d")}
+      @available_from = [@space.available_from, Date.today].max
       erb :"spaces/space"
     else
       redirect to "/sessions/new"
