@@ -1,4 +1,7 @@
 feature "create a new space" do
+  before do
+    allow(SendSignupAck).to receive(:call)
+  end
   scenario "add a new space to list of spaces to rent" do
     sign_up
     expect { create_space }.to change(Space, :count).by(1)

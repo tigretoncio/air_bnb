@@ -1,4 +1,7 @@
 feature "logging out" do
+  before do
+    allow(SendSignupAck).to receive(:call)
+  end
   scenario "click logout button to delete session of user" do
     sign_up
     logout

@@ -1,4 +1,7 @@
 feature "confirm bookings I've received" do
+  before do
+    allow(SendSignupAck).to receive(:call)
+  end
 
   let(:booking) { Booking.first }
 

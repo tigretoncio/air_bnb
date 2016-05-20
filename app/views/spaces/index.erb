@@ -1,48 +1,53 @@
+
 <h1 style="margin-top:5px">Spaces</h1>
+
 <br><br>
 <div align="center">
   <a class="link" href="/spaces/new">Add a new space</a>
   <div class="tiny_space"></div>
   <br><br>
-  <form method='get' action='/spaces'>
-    Available from: <input type="date" name="available_from" required/>
-    <br>
-    Available to: <input type="date" name="available_to" required/>
-    <br>
-    <input type='submit' value='List Spaces' class="go_button">
+  <form method='get' action='/spaces' class="available-form">
+    <div class="available-form-group">
+      <label class="available-form-label" for="available-from">Available from:</label>
+      <input type="date" class="date_boxes available-form-input" id="available-from" name="available_from" required/>
+    </div>
+    <div class="available-form-group">
+      <label class="available-form-label" for="available-to">Available to:</label>
+      <input type="date" class="date_boxes available-form-input" id="available-to" name="available_to" required/>
+    </div>
+    <input type='submit' value='List Spaces' class="go_button"/>
   </form>
 </div>
 <br><br>
 <div class="tiny_space"></div>
-
+</body>
 <div align="center">
   <% @spaces.each do |space| %>
-  <div>
-    <table class="normal">
-      <tr>
-        <td class="ellipsis"><%=space.name%></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><%=space.description%></td>
-        <td>
-          <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
-            Book
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="ellipsis">£<%=space.price%></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><p class="username">by <strong><%=space.user.name%></strong> (@<%=space.user.username%>)</p></td>
-        <td></td>
-      </tr>
-    </table>
-    <p></p>
-    <div class="tiny_space"></div>
-  </div>
-  <%end%>
-</div>
+    <div>
+      <table class="normal">
+        <tr>
+          <td class="ellipsis"><%=space.name%></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%=space.description%></td>
+          <td>
+            <a id="space<%=space.id%>" href="/spaces/<%=space.id%>">
+              Book
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="ellipsis">£<%=space.price%></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><p class="username">by <strong><%=space.user.name%></strong> (@<%=space.user.username%>)</p></td>
+          <td></td>
+        </tr>
+      </table>
+      <p></p>
+      <div class="tiny_space"></div>
+    </div>
+  <% end %>
 </div>

@@ -11,6 +11,14 @@ select {
   color: #4c4c4c;
 }
 
+body {
+  background: url("Modern-living-room-design-small.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 p {
   font-size: 12px;
   display: inline-block;
@@ -43,7 +51,6 @@ html{
   border: solid 1px #cbc9c9;
   text-align: center;
 }
-
 
 form{
   margin: 0 30px;
@@ -106,7 +113,6 @@ input[type=password]{
   border: solid 0px #cbc9c9;
 }
 
-
 .accounttype{
   margin-left: 8px;
   margin-top: 20px;
@@ -142,11 +148,8 @@ a.button:hover {
   box-shadow: none;
 }
 
-
 .link-login {
-
   font-size: 12px;
-
 }
 
 .testbox-login {
@@ -168,7 +171,9 @@ a.button:hover {
   color: blue;
 }
 
-
+.errors {
+  color: red;
+}
 
 
 .column {
@@ -190,32 +195,32 @@ a.button:hover {
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #779156;
 }
 
 li {
-    float: left;
-    border-right:1px solid #bbb;
+  float: left;
+  border-right:1px solid #bbb;
 }
 
 li:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+  background-color: #9d8f7b;
 }
 
 #hello {
@@ -228,330 +233,8 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color: #4CAF50;
+  background-color: #4CAF50;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .unstyled::-webkit-inner-spin-button,
 .unstyled::-webkit-calendar-picker-indicator {
@@ -559,10 +242,10 @@ li a:hover:not(.active) {
     -webkit-appearance: none;
 }
 
-
 table.normal {
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #494136;
+    background-color: #f0e8de;
     border-collapse: collapse;
 }
 
@@ -580,18 +263,15 @@ tr td:nth-child(2) { /* I don't think they are 0 based */
    text-align: center;
 }
 
+.my_text_box, .my_date_box{
+  background-color: #f0e8de;
+  border: 1px solid #494136;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+input.date_boxes{
+  background-color: #f0e8de;
+  border: 1px solid #494136;
+}
 
 /***FIRST STYLE THE BUTTON***/
 input.go_button{
@@ -599,8 +279,8 @@ input.go_button{
   align-content: center;
   cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
   padding:5px 25px; /*add some padding to the inside of the button*/
-  background:#35b128; /*the colour of the button*/
-  border:1px solid #33842a; /*required or the default border for the browser will appear*/
+  background:#9d8f7b; /*the colour of the button*/
+  border:1px solid #494136; /*required or the default border for the browser will appear*/
   /*give the button curved corners, alter the size as required*/
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -615,9 +295,31 @@ input.go_button{
 }
 /***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
 input.go_button:hover, input.gobutton:focus{
-  background-color :#399630; /*make the background a little darker*/
+  background-color :#779156; /*make the background a little darker*/
   /*reduce the drop shadow size to give a pushed button effect*/
   -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
   -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
   box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
+.available-form {
+  width: 40%;
+}
+
+.available-form-label {
+  flex: auto;
+  width: 23%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.available-form-input {
+  width: 23%;
+  flex: auto;
+}
+
+.available-form-group {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
 }
