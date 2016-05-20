@@ -16,20 +16,14 @@ class AirBnb < Sinatra::Base
   end
 
   post "/bookings/new" do
-    confirmed_bookings = Booking.all(space_id: params[:space],
-                                     date: params[:date],status: "confirmed")
-    if confirmed_bookings.length < 1
-      booking = Booking.create(user: current_user,
-                               space: Space.first(id: params[:space]),
-                               date: params[:date],
-                               status: "requested")
-      if booking.id.nil?
-        flash[:errors] = booking.errors.full_messages
-      else
-        redirect to "/bookings"
-      end
+    booking = Booking.create(user: current_user,
+                             space: Space.first(id: params[:space]),
+                             date: params[:date],
+                             status: "requested")
+    if booking.id.nil?
+      flash[:errors] = booking.errors.full_messages
     else
-      flash[:errors] = ["Sorry, this date is already taken"]
+      redirect to "/bookings"
     end
   end
 
