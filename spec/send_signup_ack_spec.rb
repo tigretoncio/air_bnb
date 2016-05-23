@@ -3,7 +3,7 @@ require 'dotenv'
 
 describe SendSignupAck do
   # DOMAIN = "sandbox095db3c079904d219e00440da5443f4c.mailgun.org"
- let(:user){double :user, email: "test@test.com", password_token: "12345678"}
+ let(:user){double :user, email: "test@test.com", password_token: "12345678", name: "sergio"}
  let(:mail_gun_client){double :mail_gun_client}
  let(:sandbox_domain_name) { ENV['DOMAIN'] }
 
