@@ -78,7 +78,7 @@ We feel we have succesfully adopted an agile methodology:
 - Loads of fun and a sense of achivement
 - Good troubleshooting effort when things became messy
 <a name="comment"></a>
-
+[General comment and reflection](#reflection)
 #General comment and reflection
 
 Although at the beginning some individuals of the team were  wary of the way we should work together, and scared of the huge task ahead, people really went on to the task contributing with their technical and soft skills, and it was really amazing what we have accomplished in a week.
